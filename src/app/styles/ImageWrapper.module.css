@@ -1,0 +1,13 @@
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.featuredImageWrapper{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 80/100;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
