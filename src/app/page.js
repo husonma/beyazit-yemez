@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
-import Image from "next/image";
-import "@/app/styles/index.scss"
-import styles from "@/app/styles/ImageWrapper.module.css" 
-import Slider from "./components/slider";
+import { Inter } from 'next/font/google';
+import Image from 'next/image';
+import '@/app/styles/index.scss';
+import styles from '@/app/styles/ImageWrapper.module.css';
+import Slider from './components/slider';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </div>
       <div className="slider">
-        <Slider/>
+        <Slider />
       </div>
     </div>
   );
