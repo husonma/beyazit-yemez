@@ -1,0 +1,28 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  span {
+    font-weight: 700;
+    font-size: larger;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

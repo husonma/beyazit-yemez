@@ -1,56 +1,50 @@
-.top-main{
-    margin-top: 1rem;
-    background-color: rgba(124,198,237,255) !important;
-    border-top-left-radius: 3%;
-    border-top-right-radius: 3%;
-    border-bottom-left-radius: 3%;
-    border-bottom-right-radius: 3%;
+.top-main {
+  background-color: rgba(124, 198, 237, 255) !important;
+  display: flex;
+  flex-direction: row;
+  .top-main-info {
     display: flex;
-    flex-direction: row;
-    .top-main-info{
-        display: flex;
-        flex-direction: column;
-        margin-left: 20%;
-        align-items: center;
-        justify-content: center;
-        @media (max-width: 768px) {
-            margin-left: 5%;
-            .span-info{
-                font-size: smaller !important;
-                font-weight: 300 !important;
-            }
-            span{
-                font-size: small !important;
-                font-weight: 500 !important;
-            }
-        }
-        .span-info{
-            color: white;
-            font-weight: 500;
-            font-size:large;
-            justify-content: center;
-        }
-        span{
-            color: white;
-            font-weight: 700;
-            font-size: x-large;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-    }
-}
-.profile-img{
-    width: 100%;
-    border-radius: 10%;
-    border-color: transparent;
+    flex-direction: column;
+    margin-left: 20%;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 768px) {
-        width: 80% !important;
-        height: 100% !important;
+      margin-left: 0%;
+      align-items: normal;
+      .span-info {
+        font-size: smaller !important;
+        font-weight: 300 !important;
+      }
+      span {
+        font-size: small !important;
+        font-weight: 500 !important;
+      }
     }
+    .span-info {
+      color: white;
+      font-weight: 500;
+      font-size: large;
+      justify-content: center;
+    }
+    span {
+      color: white;
+      font-weight: 700;
+      font-size: x-large;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
 }
-.slider{
-    display: flex !important;
-    justify-content: center !important;
-    margin-top: 1rem !important;
-    margin-bottom: 3rem !important;
+.profile-img {
+  width: 100%;
+  border-radius: 10%;
+  border-color: transparent;
+  @media (max-width: 768px) {
+    width: 80% !important;
+    height: 100% !important;
+  }
+}
+.slider {
+  display: flex !important;
+  justify-content: center !important;
 }

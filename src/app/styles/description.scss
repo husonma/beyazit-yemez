@@ -1,0 +1,58 @@
+.top-slider {
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+}
+.line-desc {
+  display: block; // block
+  width: 100%; // w-full
+  height: 100%; // h-full
+
+  @media (min-width: 768px) {
+    height: 80vh; // md:h-[80vh]
+  }
+
+  padding-top: 20px; // py-20
+  padding-bottom: 20px; // py-20
+  padding-left: 10px; // px-10
+  padding-right: 10px; // px-10
+
+  @media (min-width: 768px) {
+    padding-left: 15px; // md:px-15
+    padding-right: 15px; // md:px-15
+  }
+
+  text-align: left; // Default for tablets and phones (md and below)
+
+  @media (min-width: 768px) {
+    text-align: center; // text-center for md and above
+  }
+
+  overflow-y: auto; // overflow-y-auto
+}
+
+.desc {
+  line-height: 2;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  height: 2.5rem;
+  font-style: italic;
+  color: black;
+  overflow-wrap: break-word;
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .desc {
+    font-size: 14px;
+    height: auto;
+  }
+
+  .top-slider {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+    font-size: 12px;
+  }
+}

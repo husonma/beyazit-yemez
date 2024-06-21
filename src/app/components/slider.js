@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Description, { descriptions } from './description';
-
+import '@/app/styles/slider.scss';
 export default function Slider() {
   const [activeDescription, setActiveDescription] = useState(0);
 
@@ -10,8 +10,8 @@ export default function Slider() {
   };
 
   return (
-    <main className="grid place-items-center w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
-      <div className="w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 md:rounded-2xl p-6 md:p-0">
+    <main className="grid place-items-center w-full mx-auto">
+      <div className="description">
         <Description
           activeDescription={activeDescription}
           setActiveByTitle={setActiveByTitle}
