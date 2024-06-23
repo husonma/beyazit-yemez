@@ -31,6 +31,21 @@
   overflow-y: auto; // overflow-y-auto
 }
 
+.desc-special {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  color: black;
+  overflow-wrap: break-word;
+  li {
+    margin-left: 1rem;
+  }
+}
 .desc {
   line-height: 2;
   font-weight: 500;
@@ -48,7 +63,17 @@
     font-size: 14px;
     height: auto;
   }
-
+  .desc-special {
+    font-size: 14px;
+    align-items: start;
+    text-align: left;
+    p {
+      margin-left: 0.5rem;
+    }
+    ul {
+      padding-left: 1rem;
+    }
+  }
   .top-slider {
     flex-direction: column;
     align-items: flex-start;

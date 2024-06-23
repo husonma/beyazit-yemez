@@ -1,10 +1,14 @@
 import React from 'react';
 import '@/app/styles/description.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export const descriptions = [
   {
     id: 0,
     title: 'Özgeçmiş',
     subdesc: [
+      { desc: '•Lise-> Bornova Anadolu Lisesi  (1973)' },
+      { desc: '•Lise-> Ankara Fen Lisesi (1976)' },
       { desc: '•Lisans-> Ege Üniversitesi Ege Tıp Fakültesi (1982)' },
       {
         desc: '•Tıpta Uzmanlık-> Dokuz Eylül Üniversitesi Tıp Fakültesi Ruh Sağlığı ve Hastalıkları Dalı (1991)',
@@ -20,13 +24,52 @@ export const descriptions = [
   },
   {
     id: 1,
-    title: 'İlgilenilen Hastalıklar',
+    title: 'İLGİLENDİĞİ ALANLAR',
     subdesc: [
-      { desc: 'm' },
-      { desc: 'e' },
-      { desc: 'r' },
-      { desc: 'h' },
-      { desc: 'b' },
+      {
+        desc: 'Anksiyete (Kaygı) Bozuklukları:',
+        subdesc:
+          '•Yaygın Anksiyete Bozukluğu ( Sürekli gerginlik, endişe hali, kolay öfkelenme…); •Panik Bozukluk ( Aniden şiddetli anksiyete atakları); •Fobiler (Hayvan, Durumsal, Doğal Afet, Kan-enejksiyon…); •Sosyal Fobi ( Toplum önünde herhangi bir performans göstermekte aşırı korkma)',
+      },
+      {
+        desc: 'Obsesif Kompulsif Bozukluk (Saplantı Zorlantı Bozukluğu):',
+        subdesc:
+          '•Kirlenme takıntısı - Temizlik, yıkanma zorlantısı; •Kuşku takıntısı, emin olamama - Kontrol etme zorlantısı; •Düzen takıntısı - Düzenleme, simetri zorlantısı; •Cinsel, dinsel, metafizik takıntılar…',
+      },
+      {
+        desc: 'Duygudurum Bozuklukları:',
+        subdesc:
+          '•Depresyon (Mutsuzluk, ilgi kaybı, zevk almama, isteksizlik, iştah ve uyku sorunları...); •Bipolar Duygudurum Bozukluğu ( Manik ve Depresyon atakları)',
+      },
+      {
+        desc: 'Uyku Bozuklukları:',
+        subdesc:
+          '•İnsomnia ( Uykuya dalmada zorluk, uyku bölünmeleri, yetersiz uyku…); •Hipersomnia ( Fazla uyuma...)',
+      },
+      {
+        desc: 'İlişki Sorunları:',
+        subdesc: '•Evlilik sorunları; •Ebeveyn - Çocuk sorunları',
+      },
+      {
+        desc: 'Kişilik Sorunları:',
+        subdesc:
+          '•Obsesif Kompulsif Kişilik (Aşırı titiz, düzenli, prensipli, güvensiz...); •Paranoid Kişilik (Aşırı kuşkucu,kıskanç, güvensi...); •Borderline Kişilik ( Duygudurumunda ve kişilerarası ilişkilerinde değişkenlik, boşluk hissi, dürtüsellik...) ',
+      },
+      {
+        desc: 'Alkol ve Madde Kullanım Bozuklukları:',
+        subdesc:
+          '•Alkol ve veya Madde Kötüye Kullanımı; •Alkol ve veya Madde Bağımlılığı',
+      },
+      {
+        desc: 'Yeme Bozuklukları:',
+        subdesc:
+          '•Anoreksiya Nervoza ( İsteyerek aşırı zayıflama, kilo almaktan korkma…); •Bulimya Nervoza (Aşırı tıkınma ataklarının olması, kusma davranışı)',
+      },
+      {
+        desc: 'Psikotik Bozukluklar:',
+        subdesc:
+          '•Varolmayan sesler duyma, görüntüler görme, gerçek olmayan düşüncelere sahip olma, kendi kendine konuşma; •İçe kapanma, sosyal, ailesel ve okul veya mesleki işlevlerinde ciddi bozulma…',
+      },
     ],
   },
   {
@@ -141,7 +184,6 @@ export const descriptions = [
     ],
   },
 ];
-
 const Description = ({ activeDescription, setActiveByTitle }) => {
   return (
     <div className="grid w-full bg-[#6F90AF] relative">
@@ -158,24 +200,45 @@ const Description = ({ activeDescription, setActiveByTitle }) => {
           </div>
         ))}
       </div>
-      {descriptions.map((elem) => (
-        <div
-          key={elem.id}
-          className={`${
-            elem.id === activeDescription ? 'line-desc' : 'hidden'
-          }`}
-        >
-          <div className="w-full">
-            <div className="py-16 text-5xl font-extrabold">{elem.title}</div>
-
-            {elem.subdesc.map((sub, index) => (
-              <div key={index} className="desc">
-                {sub.desc}
+      {descriptions &&
+        descriptions.map((elem) => (
+          <div
+            key={elem.id}
+            className={`${
+              elem.id === activeDescription ? 'line-desc' : 'hidden'
+            }`}
+          >
+            {elem.id === 1 ? (
+              <div className="w-full bg-special">
+                <div className="py-16 text-5xl font-extrabold text-special">
+                  {elem.title}
+                </div>
+                {elem.subdesc.map((sub, index) => (
+                  <div key={index} className="desc-special col-md-3 mx-auto">
+                    <p>{sub.desc}</p>
+                    <ul>
+                      {sub.subdesc &&
+                        sub.subdesc
+                          .split(';')
+                          .map((bullet, idx) => <li key={idx}>{bullet}</li>)}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
+            ) : (
+              <div className="w-full">
+                <div className="py-16 text-5xl font-extrabold">
+                  {elem.title}
+                </div>
+                {elem.subdesc.map((sub, index) => (
+                  <div key={index} className="desc">
+                    {sub.desc}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 };
